@@ -21,7 +21,7 @@ export default function Home() {
           href="https://www.arcgis.com/home/webscene/viewer.html?webscene=7ca76928f1994628857e6445a16d0ffb"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-400 hover:underline text-lg mb-4"
+          className="mt-2 inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded"
         >
           View Project →
         </a>
@@ -52,7 +52,7 @@ export default function Home() {
           href="https://www.arcgis.com/home/webscene/viewer.html?webscene=cfd0a5150d7946759fb8b9684c2d7fbd"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-400 hover:underline text-lg mb-4"
+          className="mt-2 inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded"
         >
           View Project →
         </a>
@@ -77,7 +77,7 @@ export default function Home() {
           href="https://learngis.maps.arcgis.com/home/webscene/viewer.html?webscene=dace3ae1eb894e2ea37668e671ab389c"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-400 hover:underline text-lg mb-4"
+          className="mt-2 inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded"
         >
           View Project →
         </a>
