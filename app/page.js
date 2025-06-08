@@ -1,103 +1,163 @@
-import Image from "next/image";
+'use client';
+
+import React from 'react';
+import Head from 'next/head';
+import Section from './components/Section';
+import Gallery from './components/Gallery';
+import VideoSection from './components/VideoSection';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="min-h-screen bg-gray-900 text-white">
+      <Head>
+        <title> GIS & BIM Portfolio </title>
+      </Head>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <h1 className="text-3xl font-bold text-center pt-6">GIS & BIM Portfolio</h1>
+
+      <div className="flex flex-col items-center justify-center my-10">
+        <h2 className="text-2xl font-bold mb-4">Interactive ArcGIS Web Scene</h2>
+        <a
+          href="https://www.arcgis.com/home/webscene/viewer.html?webscene=7ca76928f1994628857e6445a16d0ffb"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-400 hover:underline text-lg mb-4"
+        >
+          View Project →
+        </a>
+        <div className="w-full max-w-4xl p-4 bg-gray-800 rounded-lg shadow-lg">
+          <img
+            src="/bim_webscene.png"
+            alt="Interactive Web Scene Thumbnail"
+            className="w-full h-auto object-cover rounded"
+          />
+          <p className="text-center mt-2 text-white text-base">Interactive Web Scene Thumbnail</p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+      </div>
+
+      <Gallery title="Model Geolocation & Querying Workflows" images={[
+        { src: "/start_forming_query.png.png", title: "Starting Query on Object IDs" },
+        { src: "/definition_query.png.png", title: "Defining Layer Filter Query" },
+        { src: "/move_model_ground.png.png", title: "Model Positioned in 3D Urban Scene" },
+        { src: "/buildings_properties.png.png", title: "Accessing Building Properties in Layer" },
+        { src: "/suggest_location.png.png", title: "Providing Address to Suggest Location" },
+        { src: "/assign_coordinate_system.png.png", title: "Assigning RD New Coordinate System" },
+        { src: "/geolocate_buildings.png.png", title: "Model Aligned to Ground Control Points" },
+        { src: "/georeference_model.png.png", title: "Using Georeference Tools for Accuracy" }
+      ]} />
+
+      <div className="flex flex-col items-center justify-center my-10">
+        <h2 className="text-2xl font-bold mb-4">Room-Level Real Estate Web App</h2>
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          href="https://www.arcgis.com/home/webscene/viewer.html?webscene=cfd0a5150d7946759fb8b9684c2d7fbd"
           target="_blank"
           rel="noopener noreferrer"
+          className="text-blue-400 hover:underline text-lg mb-4"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
+          View Project →
         </a>
+        <div className="w-full max-w-4xl p-4 bg-gray-800 rounded-lg shadow-lg">
+          <img
+            src="/rooms_webscene.png"
+            alt="Room-Level Web App Thumbnail"
+            className="w-full h-auto object-cover rounded"
+          />
+          <p className="text-center mt-2 text-white text-base">Room-Level Web App Thumbnail</p>
+        </div>
+      </div>
+      <Gallery title="Pop-ups and Space Management" images={[
+        { src: "/room_attributes.png", title: "Room Attributes Table" },
+        { src: "/relationship_class.png", title: "Creating Relationship Class" },
+        { src: "/popup_demo.png", title: "Pop-up with Room Info" }
+      ]} />
+
+      <div className="flex flex-col items-center justify-center my-10">
+        <h2 className="text-2xl font-bold mb-4">Construction Plan 3D Scene</h2>
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          href="https://learngis.maps.arcgis.com/home/webscene/viewer.html?webscene=dace3ae1eb894e2ea37668e671ab389c"
           target="_blank"
           rel="noopener noreferrer"
+          className="text-blue-400 hover:underline text-lg mb-4"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
+          View Project →
         </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+        <div className="w-full max-w-4xl p-4 bg-gray-800 rounded-lg shadow-lg">
+          <img
+            src="/construction_scene.png"
+            alt="Construction Plan 3D Scene Thumbnail"
+            className="w-full h-auto object-cover rounded"
           />
-          Go to nextjs.org →
-        </a>
+          <p className="text-center mt-2 text-white text-base">Construction Plan 3D Scene Thumbnail</p>
+        </div>
+      </div>
+      <div className="my-10">
+        <h2 className="text-2xl font-bold text-center mb-6">GIS Projects</h2>
+        <div className="flex flex-wrap justify-center gap-6">
+          {/* Wadi Al-Arish Poster */}
+          <div className="w-full md:w-[45%] bg-gray-800 rounded-lg p-4 shadow-lg">
+            <img
+              src="/wadi_arish_summary.png.png"
+              alt="Project Poster: Wadi Al-Arish Hydrology"
+              className="w-full h-auto object-cover rounded"
+            />
+            <p className="text-center mt-2 text-white font-medium">
+              Project Poster: Wadi Al-Arish Hydrology
+            </p>
+          </div>
+
+          {/* U.S. Revenue Dashboard */}
+          <div className="w-full md:w-[45%] bg-gray-800 rounded-lg p-4 shadow-lg">
+            <img
+              src="/us_revenue_dashboard.png.png"
+              alt="U.S. Revenue Dashboard (Tableau)"
+              className="w-full h-auto object-cover rounded"
+            />
+            <p className="text-center mt-2 text-white font-medium">
+              U.S. Revenue Dashboard (Tableau)
+            </p>
+            <div className="flex justify-center mt-3">
+              <a
+                href="https://public.tableau.com/app/profile/mohamed.adel8081/viz/InsightsAnalysisofRevenueTrendsDashboard/InsightsAnalysisofRevenueTrendsDashboard"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              >
+                View Dashboard
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <Gallery images={[
+        { src: "/sewer_network_ny.png.png", title: "Sewer Network Overview" },
+        { src: "/water_network_banafsaj.png.png", title: "Full Water Network Study Area" },
+        { src: "/topo_map_al_tur.png.png", title: "Digitized Topographic Map of Al Tur" },
+        { src: "/zagazig_highways.png.png", title: "Classified Highway Map of Zagazig" }
+      ]} />
+
+
+      <VideoSection title="Create ArcGIS GeoBIM Project" videos={[
+        { src: "/authorizing_geobim.mp4.mp4", title: "Authorizing ArcGIS GeoBIM" },
+        { src: "/configure_app.mp4.mp4", title: "Configure the App" },
+        { src: "/create_app.mp4.mp4", title: "Create the App" },
+        { src: "/new_project.mp4.mp4", title: "Start New Project" },
+        { src: "/geobim_links.mp4.mp4", title: "Navigate Links Panel" },
+        { src: "/geobim_tools.mp4.mp4", title: "Explore Tools Menu" }
+      ]} />
+      <footer className="bg-gray-800 text-white text-center py-6 mt-12">
+        <div className="space-y-2">
+          <p className="text-lg font-semibold">Contact Info</p>
+          <p>
+            <span className="text-green-400 text-xl">📲</span> +20 01552342926
+          </p>
+          <p>
+            <span className="text-white text-xl font-bold">✉️</span> mohamedadel.782001@gmail.com
+          </p>
+        </div>
       </footer>
-    </div>
+
+    </main>
   );
 }
