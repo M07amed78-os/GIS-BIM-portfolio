@@ -146,6 +146,16 @@ export default function Home() {
         { src: "/geobim_links.mp4.mp4", title: "Navigate Links Panel" },
         { src: "/geobim_tools.mp4.mp4", title: "Explore Tools Menu" }
       ]} />
+      <div className="flex justify-center mt-12 mb-6">
+        <a
+          href="/Mohamed Adel.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-blue-800 text-white font-semibold px-6 py-3 rounded-lg shadow transition"
+        >
+          📄 View My CV
+        </a>
+      </div>
       <footer className="bg-gray-800 text-white text-center py-6 mt-12">
         <div className="space-y-2">
           <p className="text-lg font-semibold">Contact Info</p>
